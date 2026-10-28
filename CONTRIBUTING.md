@@ -1,12 +1,12 @@
 # Contributing
 
-Small, evidence-backed improvements are welcome. Start with an issue for a significant workflow change; a focused correction can go straight to a pull request.
+Small, evidence-backed improvements are welcome. Start with an issue for a significant workflow change; a focused correction can go straight to a pull request. Keep this repository's documentation and examples in English.
 
 ## What makes a useful contribution
 
 - A real project situation, the observed failure, and the smallest general correction.
 - A client compatibility report with version, platform, install route, and kickoff/resume evidence.
-- A clear translation or example that preserves the same decisions and authorization boundaries.
+- A clearer explanation or example that preserves the same decisions and authorization boundaries.
 - A fix that removes duplicated instructions or unnecessary context loading.
 
 Keep the portable workflow independent of a single vendor's tools. Add client-specific guidance in the appropriate reference or documentation. Avoid turning one project's preference into a universal requirement or adding approvals to routine authorized work.

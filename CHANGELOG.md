@@ -6,7 +6,7 @@
 - Confirms documentation language, backup policy, and project skill choices.
 - Provides adaptable AGENTS.md and PROJECT_STATUS.md templates.
 - Documents backup verification, safe restore procedures, and persistent client context.
-- Adds English and Persian introductions, client installation routes, examples, and contribution guidance.
+- Adds an English introduction, client installation routes, examples, and contribution guidance.
 - Adds reference-specification and local-link validation with GitHub Actions.
 
 Client integration routes are based on vendor documentation; all-client behavioral certification is not claimed.

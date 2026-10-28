@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-2563eb.svg)](LICENSE)
 [![Agent Skills](https://img.shields.io/badge/Agent_Skills-open_standard-059669.svg)](https://agentskills.io/specification)
 
-[فارسی](README.fa.md) · [Installation](docs/installation.md) · [Example](docs/example.md) · [Compatibility](docs/compatibility.md)
+[Installation](docs/installation.md) · [Example](docs/example.md) · [Compatibility](docs/compatibility.md)
 
 Project Foundation is a portable **Agent Skill** for starting and continuing software projects with clear agreements, recoverable work, and an honest record of progress.
 
@@ -94,7 +94,7 @@ The maintainer tooling is optional. Agents do not need Python to use the skill.
 
 ## Contribute
 
-Useful contributions include a reproducible client compatibility report, a clearer workflow, a new language guide, or a fix for a real project failure. Start with [CONTRIBUTING.md](CONTRIBUTING.md). For defects and ideas, [open an issue](https://github.com/alidavodidev-lgtm/project-foundation/issues).
+Useful contributions include a reproducible client compatibility report, a clearer workflow, an improved example, or a fix for a real project failure. Start with [CONTRIBUTING.md](CONTRIBUTING.md). For defects and ideas, [open an issue](https://github.com/alidavodidev-lgtm/project-foundation/issues).
 
 If this makes your project easier to continue, a star helps others find it.
 
