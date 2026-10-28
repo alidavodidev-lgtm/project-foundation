@@ -1,0 +1,17 @@
+name: "Improvement idea"
+description: "Suggest a useful, portable improvement."
+title: "[Idea] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: "What project problem would this solve?"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "Proposed behavior and tradeoffs"
+      description: "Explain when it should apply and any extra approvals, context, or dependencies it introduces."
+    validations:
+      required: true

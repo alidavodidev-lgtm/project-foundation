@@ -1,0 +1,32 @@
+name: "Bug or compatibility report"
+description: "Report an observed workflow or client integration problem."
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Use a disposable example. Do not include credentials, private projects, personal paths, or sensitive data."
+  - type: textarea
+    id: environment
+    attributes:
+      label: "Environment"
+      description: "Client and version, OS, installation scope, and skill version or commit."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: "Minimal reproduction"
+      description: "What did you ask, and which relevant choices did you make?"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected and observed behavior"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Redacted evidence"
+      description: "Relevant output or a small screenshot. Distinguish discovery from actual execution."
