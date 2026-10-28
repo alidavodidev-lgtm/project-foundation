@@ -16,7 +16,7 @@ Do not assume cloud upload, remote creation, scheduling, Git commits, pruning, o
 
 ## Minimum usable policy
 
-Record method; source and coverage; destination/provider and access; exclusions; triggers; retention; allowed local/commit/remote actions; verification; safe restore procedure; and failure behavior. Explicitly identify secrets, databases, uploads/user files, external services, Git LFS/submodules, or ignored/untracked assets when present. Do not collect credentials in documentation.
+For an explicit opt-out, record only the decision/date and concrete recovery exposure in 1-2 lines; omit unused policy fields. For an active policy, record method; source and coverage; destination/provider and access; exclusions; triggers; retention; allowed local/commit/remote actions; verification; safe restore procedure; and failure behavior. Explicitly identify secrets, databases, uploads/user files, external services, Git LFS/submodules, or ignored/untracked assets when present. Do not collect credentials in documentation.
 
 Choose triggers proportional to recovery cost: an existing-project baseline before modifying it, meaningful milestones, and before disruptive refactors, migrations, deletions, or dependency/toolchain changes. Do not archive the entire project after every read or keystroke. Scheduled execution requires a real configured scheduler and user authority; recording a frequency is not creating an automation.
 

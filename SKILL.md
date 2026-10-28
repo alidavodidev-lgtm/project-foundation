@@ -1,6 +1,6 @@
 ---
 name: project-foundation
-description: "Prepare or resume a software project with agreed documentation language, backup policy, skills, structure, and quality criteria; maintain AGENTS.md and PROJECT_STATUS.md. Use for project kickoff, adopting an existing project, or continuing work under these agreements. Do not restart onboarding for ordinary tasks in an already configured project."
+description: "Establish or repair project agreements, AGENTS.md, and PROJECT_STATUS.md during kickoff, adoption, or changes to the project foundation. Routine implementation and resume use the recorded rules and current status directly; load this skill only for foundation changes, repair, or an explicit request."
 license: MIT
 metadata:
   author: "alidavodidev-lgtm"
@@ -16,7 +16,7 @@ This is a portable Agent Skill: use the host's available file, search, shell, an
 ## Choose the mode
 
 - **Kickoff/adoption:** Agreements are missing or the user asks to establish them. Inspect first, ask for the decisions below, then create or merge the two core documents.
-- **Resume:** Agreements exist. Read applicable AGENTS instructions and the current snapshot of PROJECT_STATUS.md, check actual repository state, and continue the authorized task. Do not repeat answered questions. Ask only about a consequential change or missing decision.
+- **Routine resume:** Existing AGENTS instructions and the current PROJECT_STATUS.md snapshot are sufficient. Check actual repository state and continue the authorized task without loading this skill or its references unless explicitly requested or required by the host. If already loaded, skip kickoff and reuse recorded choices.
 - **Repair:** Documents disagree with observed code or are incomplete. Preserve history, distinguish observations from assumptions, and reconcile only the affected sections. Never mark historical work verified merely because a document says it passed.
 
 ## 1. Inspect without changing the project
@@ -25,52 +25,15 @@ Locate the intended project root; ask if ambiguous. Inspect applicable parent/ro
 
 Identify what is already decided: product goal, users, platform, stack/versions, commands, structure, current work, user changes, data stores, deployment, and constraints. Do not run untrusted setup scripts during inspection. Do not initialize Git, install dependencies, move files, or overwrite documents at this stage.
 
-## 2. Ask for language, backups, and skills
+## 2. Agree on the foundation
 
-Ask in the user's conversation language. Use available question tools, otherwise ask concise questions in chat. Prepare concrete choices before asking for approval. Continue independent read-only discovery while waiting; silence is not agreement.
+For kickoff/adoption or a material agreement change, read [project-agreement.md](references/project-agreement.md) before presenting choices. It covers documentation language, backup protection, skill selection, and proportionate scope/quality criteria. Reuse recorded decisions. Bundle independent unresolved questions in the user's language with recommendations; follow up only on consequential dependencies. Silence is not approval. Resolve language, required backup protection, and material scope/architecture choices before dependent writes. Do not add recurring approval gates for routine authorized work.
 
-### Documentation language
-
-Before creating or rewriting project documentation, ask: **"Which language should project documentation use? English (default), your conversation language, or another language?"** The default is the suggested choice, not permission to skip the question. An explicit earlier answer such as "use the defaults" is sufficient; record it and do not ask again. If unanswered, defer documentation writes and dependent implementation.
-
-Store prose in the selected language using UTF-8. Keep filenames, paths, commands, code identifiers, and canonical status codes unchanged. Conversation language and product UI language are separate choices; do not infer either from documentation language. Preserve existing documents' language unless a translation is requested; agree on scope when existing and selected languages differ.
-
-### Backup policy
-
-After inspection, offer relevant choices: **local snapshot**, **Git checkpoints**, **hybrid Git plus local/data snapshots**, or **another user-specified method**. Explain the actual coverage and tradeoff in one sentence each; recommend based on this project. Allow the user to explicitly decline backups and record the accepted limitations.
-
-Agree on destination, included/excluded data, triggers, retention, restore method, and any remote upload/commit authority. Reuse an existing agreed policy. Read [backup-policy.md](references/backup-policy.md) when defining or executing backups. Do not begin project mutations, including replacing existing documentation, before the policy is decided and any required baseline is verified. For an empty project, record that there is no prior content to protect. If execution is unavailable, record the limitation and defer only work requiring that protection; policy text is not a completed backup.
-
-### Project skill selection
-
-Discover the current environment's available skill metadata. Propose the smallest useful set as a short table: exact skill name, why it fits this project, when it will be loaded, and whether available. Read full instructions only when needed for an actual task. Do not hardcode a universal skill catalog or load every suggested skill.
-
-Ask the user to **approve, add, remove, or choose no optional skills** before using the proposed project set. Persist approved and declined choices, source identifiers/paths, and triggers in AGENTS.md. Existing explicit approval is enough; propose a delta only when the project's needs materially change. A selected skill is available for relevant tasks, not mandatory on every turn.
-
-If host/system instructions already require a skill, disclose it separately with its reason; the optional selection cannot override those instructions. Do not install skills, enable integrations, or delegate to agents merely because they are listed. If a selected skill is unavailable, disclose the gap and offer the closest available workflow; get installation authority before installing it. Skill approval does not authorize publishing, messages, purchases, or other external effects.
-
-## 3. Establish a proportionate project agreement
-
-Infer facts from the repository and existing requirements. Ask only unresolved questions that change the outcome; offer a recommendation with its tradeoff. Bundle related questions instead of producing a long interview. Resolve scope and material stack/architecture choices before scaffolding.
-
-Record the following as applicable; label unknowns and assumptions rather than inventing answers:
-
-- Product outcome, target users, platforms, MVP scope, non-goals, constraints, and observable acceptance criteria. Distinguish prototype, internal tool, and production needs.
-- Existing or chosen stack, runtime/package manager versions, lockfiles, key dependencies, module/data boundaries, external services, and deployment target. Preserve a suitable existing stack; do not force a framework or add dependencies without a concrete reason. Verify changing compatibility/support claims against primary documentation when needed.
-- A small folder map with responsibilities, naming rules, generated/temporary output locations, and import/dependency boundaries. Create only directories needed now. Preserve framework conventions; propose disruptive cleanup separately. Keep secrets and build/cache artifacts out of version control.
-- Reproducible setup, safe configuration examples, and actual build/lint/type/test commands with working directories. Mark untried commands as unverified. Add CI only when in scope; use the project's existing checks first.
-- Security/data requirements tied to actual trust boundaries: secrets handling, authentication/authorization, input and upload validation, sensitive-data access/logging/retention, dependency risks, migrations, and recovery. Never store credentials or real sensitive records in Markdown. A full security audit or legal/compliance certification is a separate task.
-- For user interfaces: core flows, success/error/empty/loading states, accessible input and keyboard use, focus and contrast, responsive/platform behavior, consistency with existing design, localization/RTL where relevant, and how these will be checked. Do not impose web/mobile checks on a CLI or backend.
-- Risk-based verification and completion criteria: relevant checks, critical failure paths, manual/UI review where appropriate, and remaining limitations. A small reversible documentation change does not require an application test suite.
-- For deployed services when relevant: environment separation, safe migrations, useful redacted diagnostics, rollback, and measurable performance/reliability expectations. Do not invent service targets or deployment authority.
-
-Use a compact proposal and one combined confirmation where possible. Do not introduce recurring approval gates for routine work already authorized. Record material decisions and their rationale; unresolved consequential decisions remain visible and block only dependent tasks.
-
-## 4. Write the two core documents
+## 3. Write the two core documents
 
 Read and adapt [AGENTS.template.md](assets/AGENTS.template.md) and [PROJECT_STATUS.template.md](assets/PROJECT_STATUS.template.md) only when creating or restructuring these documents. Replace template slots with confirmed facts or explicit unknowns; omit irrelevant sections. Translate prose to the selected language. Do not copy template-authoring notes into the project.
 
-**AGENTS.md owns stable rules:** project purpose, document language, skills and triggers, stack/structure, safe commands, backup/restore policy, quality/security/UI requirements, and how to resume/update status. Include a short instruction to use the `project-foundation` skill when available for ongoing work and to follow the recorded agreements when it is unavailable. Keep stable operational rules directly usable without reloading this skill on every small task. Merge existing guidance carefully; preserve unrelated rules, override files, and nested scopes. Do not create global instructions or weaken existing security rules.
+**AGENTS.md owns stable rules:** purpose, document language, skills and triggers, stack/structure, commands, backup/restore policy, quality requirements, and how to resume/update status. Make these usable directly during routine work. Load `project-foundation` only for foundation changes, repair, or an explicit user/host request. Merge existing guidance; preserve unrelated rules, override files, and nested scopes. Do not create global instructions or weaken security rules. For an explicit backup opt-out, record the decision and recovery exposure in 1-2 lines; omit unused policy fields. Keep concrete coverage, authority, verification, and restore details for an active policy.
 
 For the active client, check whether AGENTS.md will actually load in a fresh session. If it needs a native bridge, read [client-context.md](references/client-context.md), then add or merge the smallest project-local pointer/import as part of the agreed foundation. Do not create adapters for every vendor, duplicate rules, import the entire status history into startup context, or change global client settings. If native persistence cannot be verified, give an explicit resume prompt and label the limitation.
 
@@ -96,7 +59,7 @@ Default to the two core documents. Explain proposed additions and reuse existing
 
 Do not create empty placeholder files or a second parallel roadmap/changelog just to look professional. Keep one owner for each fact and use links elsewhere.
 
-## 5. Work, verify, and leave a reliable handoff
+## 4. Work, verify, and leave a reliable handoff
 
 At each task start, read applicable rules and the current snapshot; recheck actual files/Git state before trusting recorded state. Preserve user changes. Keep the task's acceptance criteria visible and execute the approved backup policy at its triggers before protected changes.
 
@@ -106,10 +69,11 @@ Keep the current snapshot, phase/task table, and history consistent. Update AGEN
 
 ## Context and token discipline
 
-- Keep AGENTS.md compact (rough target: 80-140 lines, not a cap); reference deeper detail. Keep the current status snapshot near the top (rough target: 30-60 lines), with the next 1-3 concrete actions.
-- Read the snapshot and relevant task/decision entries on resume, not the entire history. Use `rg` and bounded file reads. Skip dependency/build/backup directories in ordinary searches.
+- Keep AGENTS.md proportional to the project (rough target: 80-140 lines, not a minimum or cap); reference deeper detail. Keep the snapshot near the top (rough target: 30-60 lines), with the next 1-3 actions. Omit empty or irrelevant fields.
+- Read the snapshot section first using bounded ranges, not the whole status history. Locate section boundaries and relevant IDs with `rg -n` or equivalent, then read only needed ranges; do not assume a fixed line count contains the complete snapshot. Skip dependency/build/backup directories in ordinary searches. Read a full file when the task needs it.
 - Load only the selected skill needed for the current task and its relevant references. Do not repeatedly load this skill's templates or backup guide on normal resume.
-- When status becomes unwieldy (roughly 200-250 lines), move completed old history into dated files; retain active work, decisions, unresolved risks, latest evidence references, and an archive index. Verify archive content and links before removing moved text from the live file. Preserve the full meaningful history across live and archived files.
+- Archive completed old history when it obscures active state; 200-250 lines is a warning, not a required threshold. Earlier separation is useful for frequent updates; small projects need no extra file. Retain active work, decisions, unresolved risks, latest evidence references, and an archive index. Verify moved content and links before removing live text; preserve meaningful history.
+- Use concise test/build output when supported; retain exit status and result totals. Save verbose logs when needed and inspect relevant diagnostics on failure. Do not hide failures behind a successful output-filter command or rerun a check just to shorten its output.
 - Batch independent reads and checks; reuse evidence until code, inputs, or the question changes. Do not rerun identical checks without a reason or sacrifice required verification to save tokens.
 - Log concise facts and rationale, not raw tool output, repeated rules, or private reasoning. Record token/cost numbers only if measured by the environment; do not promise a fixed saving.
 

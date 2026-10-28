@@ -16,8 +16,8 @@ Adapt the content below to the project and selected documentation language. Repl
 ## Documentation and continuation
 
 - Documentation language: {confirmed language}; UTF-8. Conversation/UI language: {separate choices if relevant}.
-- Follow these agreements throughout work. Use the `project-foundation` skill when available to prepare or resume the project and maintain its status; otherwise follow the rules recorded here.
-- On resume, read the current snapshot in [PROJECT_STATUS.md](PROJECT_STATUS.md), relevant task entries, and applicable nested instructions; inspect actual repository state before continuing.
+- Follow these agreements directly during routine work. Load `project-foundation` only to establish/change foundation agreements, repair documents, or satisfy an explicit user/host request.
+- On resume, use bounded reads of the current snapshot section in [PROJECT_STATUS.md](PROJECT_STATUS.md); locate relevant task/decision IDs and read those ranges as needed. Follow applicable nested instructions and inspect actual repository state before continuing.
 - Keep stable rules here and changing progress in PROJECT_STATUS.md. Update progress at milestones, meaningful decisions/blockers, and handoff. Keep verification and backup claims tied to actual evidence.
 - Read referenced documents only when relevant. Preserve full meaningful history in linked archives; do not load archives by default.
 
@@ -50,6 +50,8 @@ Approval: {user decision and date; reference if needed}. Load skills only for th
 
 ## Backup and recovery agreement
 
+{Authoring: For an explicit opt-out, replace the fields below with 1-2 lines recording the decision/date and recovery exposure. For an active policy, retain relevant coverage, authority, verification, and restore details or link to them. Remove this note.}
+
 - Method and approval: {local/Git/hybrid/custom/explicitly declined; decision date}
 - Coverage: {source, untracked/ignored assets, documents, data stores as applicable}
 - Exclusions and remaining exposure: {regenerable artifacts and data outside coverage}
@@ -73,5 +75,6 @@ Approval: {user decision and date; reference if needed}. Load skills only for th
 ## Delivery and context discipline
 
 - {Environment, deployment, migration, diagnostics, and performance expectations when relevant.}
-- Use targeted reads and bounded output. Keep one source for each fact; link to detailed docs instead of duplicating them.
+- Search for relevant sections/IDs before reading large files; exclude generated/dependency/backup output. Read full files when needed. Keep one source for each fact; link to detail.
+- Prefer concise test/build output; preserve the actual exit status and result totals. Inspect relevant diagnostics on failure; do not let output filtering mask a failed check.
 - At handoff, update PROJECT_STATUS.md with outcomes, evidence, limitations, and the next concrete action. Archive old completed history with verified links when the live file becomes unwieldy.

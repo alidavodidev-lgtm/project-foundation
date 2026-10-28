@@ -21,9 +21,10 @@ Do not import PROJECT_STATUS.md wholesale into always-loaded context. AGENTS.md 
 ```text
 Read and follow the project's AGENTS.md and applicable native instructions.
 Read the current snapshot and relevant tasks in PROJECT_STATUS.md.
-Check the actual working tree, then continue the next authorized task using
-the project-foundation skill if available. Reuse recorded choices; ask only
-about a material change or an unresolved decision.
+Use bounded section reads; locate relevant task IDs before reading details.
+Check the actual working tree, then continue the next authorized task.
+Reuse recorded choices. Load project-foundation only for foundation changes,
+document repair, or an explicit user/host request.
 ```
 
 Skills require a client with local file access to maintain project files; a chat-only model cannot provide that behavior merely by reading the skill text. Instructions guide the agent; they are not a sandbox or a scheduler.

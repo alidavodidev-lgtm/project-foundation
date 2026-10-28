@@ -28,8 +28,10 @@ Public sharing and browser extensions are outside this phase.
 ## Continuation
 
 Documentation language: English; UTF-8.
-Read the current snapshot in PROJECT_STATUS.md at task start.
-Use project-foundation when available; reuse agreed choices.
+Use bounded reads of the PROJECT_STATUS.md snapshot and relevant tasks.
+Follow these agreements directly; reuse agreed choices.
+Load project-foundation only for foundation changes, document repair,
+or an explicit user/host request.
 
 ## Recovery
 
@@ -73,8 +75,9 @@ In a real status document, `P00 / done` links to the actual agreement and review
 ## Next session
 
 ```text
-Use project-foundation to resume. Read AGENTS.md and the current
-PROJECT_STATUS.md snapshot, check the working tree, and continue T101.
+Follow AGENTS.md. Read the PROJECT_STATUS.md snapshot section and T101
+using bounded reads, check the working tree, and continue T101.
+Reuse the recorded language, backup, and skill choices.
 ```
 
 The agent reuses the language, backup, and skill choices. It checks current files rather than trusting stale status, performs only the authorized work, runs relevant checks, and records what actually happened. Old history is archived with links when needed; it is not erased.

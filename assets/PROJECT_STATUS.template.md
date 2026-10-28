@@ -1,6 +1,6 @@
 # PROJECT_STATUS template authoring notes
 
-Translate prose to the selected language; keep status codes and identifiers stable. Replace braces and remove these notes. Create only phases/tasks that represent this project. This file and its linked archives together preserve the meaningful work history.
+Translate prose to the selected language; keep status codes and identifiers stable. Replace braces and remove these notes. Create only relevant phases/tasks; omit empty optional fields. Keep the snapshot as a bounded section before the roadmap. Archive completed history when it obscures active state, preserving linked evidence; no extra history file is required at kickoff.
 
 ---
 

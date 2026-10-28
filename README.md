@@ -60,11 +60,14 @@ Inspect → Agree → Protect → Document → Implement → Verify → Update
 - **Smaller startup context.** Stable rules stay short; current status comes first; older history is linked and archived. No fixed token-saving claim.
 - **One source of truth.** Client adapters point to shared rules; they do not duplicate the whole project manual.
 
+For routine continuation, use the recorded agreements directly; the foundation skill does not need to load again. Invoke it when agreements need to change, documents need repair, or the user/host explicitly requires it.
+
 To resume:
 
 ```text
-Use project-foundation to resume this project. Read the current snapshot,
-check the actual working tree, and continue the next authorized task.
+Follow AGENTS.md. Read the current PROJECT_STATUS.md snapshot section and
+relevant task entries using bounded reads. Check the actual working tree
+and continue the next authorized task.
 Reuse the language, backup, and skill choices already recorded.
 ```
 
