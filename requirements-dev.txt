@@ -1,0 +1,3 @@
+# Maintainer-only checks. No runtime dependency is needed to use the skill.
+skills-ref==0.1.1
+PyYAML==6.0.3
