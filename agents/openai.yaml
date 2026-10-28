@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Foundation"
+  short_description: "Set up project rules, backups, and progress tracking"
+  default_prompt: "Use $project-foundation to prepare or resume this project and maintain AGENTS.md and PROJECT_STATUS.md. Ask for documentation language, backup policy, and proposed skills only when they have not already been agreed."
